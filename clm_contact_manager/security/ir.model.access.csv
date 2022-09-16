@@ -1,0 +1,2 @@
+id,perm_read,perm_write,perm_create,perm_unlink
+base.access_res_partner_portal,1,1,0,0
