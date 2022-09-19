@@ -1,0 +1,63 @@
+<odoo>
+
+    <record id="res_config_settings_view_clm_inherit_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.clm</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='companies_setting']" position='inside'>
+
+                <div class="o_setting_right_pane">
+                    <span class='o_form_label'>
+                            Accounting Sync Configuration
+                    </span>
+                    <div class="text-muted">
+                                            Database connection settings for the accounting sync
+                    </div>
+                    <br />
+                    <div>
+                        <label string="URL" for="odoo_url" class="col-lg-3 o_light_label" />
+                        <field name="odoo_url" />
+                        <label string="Username" for="odoo_username" class="col-lg-3 o_light_label" />
+                        <field name="odoo_username" />
+                        <label string="Password" for="odoo_password" class="col-lg-3 o_light_label" />
+                        <field name="odoo_password" password="True"/>
+                        <label string="DB name" for="odoo_db" class="col-lg-3 o_light_label" />
+                        <field name="odoo_db" />
+                        <label string="UID" for="odoo_uid" class="col-lg-3 o_light_label" />
+                        <field name="odoo_uid" />
+                        <button name="action_sync_auth" type="object" string="Test connection" class="btn btn-primary ml-3"/>
+                    </div>
+                </div>
+
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.account.clm</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='default_taxes']" position="before">
+                <div class="col-12 col-lg-6 o_setting_box" name="sync_buttons">
+                    <div class="o_setting_left_pane"/>
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Match data from connected database</span>
+                        <div class="text-muted">
+                                        Looks for matching records in the connected database and updates the local records.
+                        </div>
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <button name="action_sync_taxes" type="object" string="Match Taxes" class="btn btn-primary ml-3"/>
+                                <button name="action_sync_journals" type="object" string="Match Journals" class="btn btn-primary ml-3"/>
+                                <button name="action_sync_accounts" type="object" string="Match Accounts" class="btn btn-primary ml-3"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

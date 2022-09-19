@@ -1,0 +1,221 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* clm_accounting_sync
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-19 14:59+0000\n"
+"PO-Revision-Date: 2022-09-19 14:59+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: clm_accounting_sync
+#: model_terms:ir.ui.view,arch_db:clm_accounting_sync.res_config_settings_view_clm_inherit_form
+msgid ""
+"<span class=\"o_form_label\">\n"
+"                            Accounting Sync Configuration\n"
+"                    </span>"
+msgstr ""
+"<span class=\"o_form_label\">\n"
+"                            Boekhouding Sync Configuratie\n"
+"                    </span>"
+
+#. module: clm_accounting_sync
+#: model_terms:ir.ui.view,arch_db:clm_accounting_sync.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Match data from connected database</span>"
+msgstr "<span class=\"o_form_label\">Match data met verbonden database</span>"
+
+#. module: clm_accounting_sync
+#: model:ir.model,name:clm_accounting_sync.model_account_account
+msgid "Account"
+msgstr "Rekening"
+
+#. module: clm_accounting_sync
+#: model:ir.actions.server,name:clm_accounting_sync.ir_cron_move_payment_sync_ir_actions_server
+#: model:ir.cron,cron_name:clm_accounting_sync.ir_cron_move_payment_sync
+#: model:ir.cron,name:clm_accounting_sync.ir_cron_move_payment_sync
+msgid "CLM move payment sync"
+msgstr ""
+
+#. module: clm_accounting_sync
+#: model:ir.actions.server,name:clm_accounting_sync.ir_cron_move_sync_ir_actions_server
+#: model:ir.cron,cron_name:clm_accounting_sync.ir_cron_move_sync
+#: model:ir.cron,name:clm_accounting_sync.ir_cron_move_sync
+msgid "CLM move sync"
+msgstr ""
+
+#. module: clm_accounting_sync
+#: model:ir.actions.server,name:clm_accounting_sync.ir_cron_payment_status_sync_ir_actions_server
+#: model:ir.cron,cron_name:clm_accounting_sync.ir_cron_payment_status_sync
+#: model:ir.cron,name:clm_accounting_sync.ir_cron_payment_status_sync
+msgid "CLM payment status sync"
+msgstr ""
+
+#. module: clm_accounting_sync
+#: model:ir.model,name:clm_accounting_sync.model_res_company
+msgid "Companies"
+msgstr "Bedrijven"
+
+#. module: clm_accounting_sync
+#: model:ir.model,name:clm_accounting_sync.model_res_config_settings
+msgid "Config Settings"
+msgstr "Configuratie instellingen"
+
+#. module: clm_accounting_sync
+#: model:ir.model.fields,field_description:clm_accounting_sync.field_account_account__sync_db_res_id
+#: model:ir.model.fields,field_description:clm_accounting_sync.field_account_journal__sync_db_res_id
+#: model:ir.model.fields,field_description:clm_accounting_sync.field_account_tax__sync_db_res_id
+msgid "Connected db id"
+msgstr "Verbonden db ID"
+
+#. module: clm_accounting_sync
+#: model:ir.model,name:clm_accounting_sync.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: clm_accounting_sync
+#: model:ir.model.fields,field_description:clm_accounting_sync.field_res_company__odoo_db
+#: model:ir.model.fields,field_description:clm_accounting_sync.field_res_config_settings__odoo_db
+msgid "DB"
+msgstr ""
+
+#. module: clm_accounting_sync
+#: model_terms:ir.ui.view,arch_db:clm_accounting_sync.res_config_settings_view_clm_inherit_form
+msgid "DB name"
+msgstr "DB Naam"
+
+#. module: clm_accounting_sync
+#: model_terms:ir.ui.view,arch_db:clm_accounting_sync.res_config_settings_view_clm_inherit_form
+msgid "Database connection settings for the accounting sync"
+msgstr "Database verbindingsinstellingen voor boekhoud synchronisatie"
+
+#. module: clm_accounting_sync
+#: code:addons/clm_accounting_sync/models/res_config_settings.py:0
+#, python-format
+msgid "Info"
+msgstr ""
+
+#. module: clm_accounting_sync
+#: model:ir.model,name:clm_accounting_sync.model_account_journal
+msgid "Journal"
+msgstr "Dagboek"
+
+#. module: clm_accounting_sync
+#: model:ir.model,name:clm_accounting_sync.model_account_move
+msgid "Journal Entry"
+msgstr "Boeking"
+
+#. module: clm_accounting_sync
+#: model_terms:ir.ui.view,arch_db:clm_accounting_sync.res_config_settings_view_form
+msgid ""
+"Looks for matching records in the connected database and updates the local "
+"records."
+msgstr ""
+"Zoekt overeenkomende records in de verbonden database en updatet de lokale "
+"records."
+
+#. module: clm_accounting_sync
+#: model_terms:ir.ui.view,arch_db:clm_accounting_sync.res_config_settings_view_form
+msgid "Match Accounts"
+msgstr "Match Grootboekrekeningen"
+
+#. module: clm_accounting_sync
+#: model_terms:ir.ui.view,arch_db:clm_accounting_sync.res_config_settings_view_form
+msgid "Match Journals"
+msgstr "Match Dagboeken"
+
+#. module: clm_accounting_sync
+#: model_terms:ir.ui.view,arch_db:clm_accounting_sync.res_config_settings_view_form
+msgid "Match Taxes"
+msgstr "Match Belastingen"
+
+#. module: clm_accounting_sync
+#: code:addons/clm_accounting_sync/models/res_company.py:0
+#, python-format
+msgid "Missing ID of records to match with connected database: "
+msgstr ""
+"Ontbrekende ID(s) van record(s) om te matchen met de verbonden database:"
+
+#. module: clm_accounting_sync
+#: code:addons/clm_accounting_sync/models/res_company.py:0
+#, python-format
+msgid "Move synced to connected database"
+msgstr "Boeking gesynchroniseerd naar de verbonden database"
+
+#. module: clm_accounting_sync
+#: model:ir.model.fields,field_description:clm_accounting_sync.field_res_company__odoo_password
+#: model:ir.model.fields,field_description:clm_accounting_sync.field_res_config_settings__odoo_password
+#: model_terms:ir.ui.view,arch_db:clm_accounting_sync.res_config_settings_view_clm_inherit_form
+msgid "Password"
+msgstr "Wachtwoord"
+
+#. module: clm_accounting_sync
+#: model:ir.model,name:clm_accounting_sync.model_account_payment
+msgid "Payments"
+msgstr "Betalingen"
+
+#. module: clm_accounting_sync
+#: model:ir.model.fields,field_description:clm_accounting_sync.field_account_bank_statement_line__sync_db_payment_res_id
+#: model:ir.model.fields,field_description:clm_accounting_sync.field_account_move__sync_db_payment_res_id
+#: model:ir.model.fields,field_description:clm_accounting_sync.field_account_payment__sync_db_payment_res_id
+msgid "Sync Db Payment Res"
+msgstr ""
+
+#. module: clm_accounting_sync
+#: model:ir.model.fields,field_description:clm_accounting_sync.field_account_bank_statement_line__sync_db_res_id
+#: model:ir.model.fields,field_description:clm_accounting_sync.field_account_move__sync_db_res_id
+#: model:ir.model.fields,field_description:clm_accounting_sync.field_account_payment__sync_db_res_id
+#: model:ir.model.fields,field_description:clm_accounting_sync.field_res_partner__sync_db_res_id
+#: model:ir.model.fields,field_description:clm_accounting_sync.field_res_users__sync_db_res_id
+msgid "Sync Db Res"
+msgstr ""
+
+#. module: clm_accounting_sync
+#: model_terms:ir.ui.view,arch_db:clm_accounting_sync.account_account_form_clm_form
+#: model_terms:ir.ui.view,arch_db:clm_accounting_sync.account_journal_form_clm_form
+#: model_terms:ir.ui.view,arch_db:clm_accounting_sync.account_tax_views_clm_form
+msgid "Sync options"
+msgstr "Sync opties"
+
+#. module: clm_accounting_sync
+#: code:addons/clm_accounting_sync/models/res_company.py:0
+#, python-format
+msgid "Synchronization Failed"
+msgstr "Synchronisatie mislukt"
+
+#. module: clm_accounting_sync
+#: model:ir.model,name:clm_accounting_sync.model_account_tax
+msgid "Tax"
+msgstr "Btw"
+
+#. module: clm_accounting_sync
+#: model_terms:ir.ui.view,arch_db:clm_accounting_sync.res_config_settings_view_clm_inherit_form
+msgid "Test connection"
+msgstr "Test verbinding"
+
+#. module: clm_accounting_sync
+#: model:ir.model.fields,field_description:clm_accounting_sync.field_res_company__odoo_uid
+#: model:ir.model.fields,field_description:clm_accounting_sync.field_res_config_settings__odoo_uid
+#: model_terms:ir.ui.view,arch_db:clm_accounting_sync.res_config_settings_view_clm_inherit_form
+msgid "UID"
+msgstr ""
+
+#. module: clm_accounting_sync
+#: model:ir.model.fields,field_description:clm_accounting_sync.field_res_company__odoo_url
+#: model:ir.model.fields,field_description:clm_accounting_sync.field_res_config_settings__odoo_url
+#: model_terms:ir.ui.view,arch_db:clm_accounting_sync.res_config_settings_view_clm_inherit_form
+msgid "URL"
+msgstr ""
+
+#. module: clm_accounting_sync
+#: model:ir.model.fields,field_description:clm_accounting_sync.field_res_company__odoo_username
+#: model:ir.model.fields,field_description:clm_accounting_sync.field_res_config_settings__odoo_username
+#: model_terms:ir.ui.view,arch_db:clm_accounting_sync.res_config_settings_view_clm_inherit_form
+msgid "Username"
+msgstr "Login"
