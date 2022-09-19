@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <!-- No create for outgoing invoices, except for special group which is reserved for the user connecting to CE -->
+    <delete id="account.account_move_rule_group_invoice" model="ir.rule"/>
+    <delete id="account.account_move_see_all" model="ir.rule"/>
+    <record id="account_move_crud_no_out" model="ir.rule">
+        <field name="name">No outgoing Journal Entries</field>
+        <field ref="account.model_account_move" name="model_id"/>
+        <field name="domain_force">[('move_type', 'not in', ('out_invoice', 'out_refund'))]</field>
+        <field name="groups" eval="[(4, ref('account.group_account_invoice'))]"/>
+    </record>
+    <record id="account_move_rud_out" model="ir.rule">
+        <field name="name">No create outgoing Journal Entries</field>
+        <field ref="account.model_account_move" name="model_id"/>
+        <field name="domain_force">[('move_type', 'in', ('out_invoice', 'out_refund'))]</field>
+        <field name="groups" eval="[(4, ref('account.group_account_invoice'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+    <record id="account_move_all" model="ir.rule">
+        <field name="name">All Journal Entries</field>
+        <field ref="account.model_account_move" name="model_id"/>
+        <field name="domain_force">[(1,'=',1)]</field>
+        <field name="groups" eval="[(4, ref('clm_simple_acc_enterprise.group_create_invoice_out'))]"/>
+    </record>
+
+</odoo>
