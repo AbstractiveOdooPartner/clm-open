@@ -23,7 +23,7 @@ Configurations
 ==============
 
 #. Settings >> general settings >> Companies >> Bookkeeping Sync Configurations 
-#. Run CLM journal sync, CLM taxes sync and CLM account sync Scheduled Actions 
+#. Run CLM journal sync, CLM taxes sync and CLM account sync Actions in Invoicing settings 
 
 Authors
 ~~~~~~~

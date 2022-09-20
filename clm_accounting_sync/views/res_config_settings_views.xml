@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
         <field name="arch" type="xml">
             <xpath expr="//div[@id='companies_setting']" position='inside'>
-
+                <br/>
                 <div class="o_setting_right_pane">
                     <span class='o_form_label'>
                             Accounting Sync Configuration
