@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="model_website_form_entry" model="ir.model">
+            <field name="website_form_key">website_form_entry</field>
+            <field name="website_form_default_field_id" ref="clm_base.field_website_form_entry__description" />
+            <field name="website_form_access">True</field>
+            <field name="website_form_label">Website Form Entry</field>
+        </record>
+
+        <function model="ir.model.fields" name="formbuilder_whitelist">
+            <value>website.form.entry</value>
+            <value eval="[
+                'name',
+                'description',
+                'email_from',
+                'phone',
+                'type_id',
+                'tag_ids',
+            ]"/>
+        </function>
+    </data>
+</odoo>

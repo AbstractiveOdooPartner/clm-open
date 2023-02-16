@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_website_form_entry,website.form.entry,model_website_form_entry,base.group_user,1,1,1,0
+access_website_form_entry_type,website.form.entry.type,model_website_form_entry_type,base.group_user,1,1,1,0

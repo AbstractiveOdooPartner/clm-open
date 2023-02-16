@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- Override of contact menu window action to change view order and add context -->
+    <record id="contacts.action_contacts" model="ir.actions.act_window">
+        <field name="view_mode">tree,kanban,form,activity</field>
+        <field name="context">{'default_is_company': True, 'search_default_type_person': 1}</field>
+    </record>
+
+    <!-- partner form inherit -->
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <!-- add smart button to website form entries -->
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_website_form_entries" type="object" class="oe_stat_button" icon="fa-clipboard" attrs="{'invisible': [('website_form_entry_count', '=', 0)]}">
+                    <field name="website_form_entry_count" widget="statinfo" string="Website Form Entries"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
