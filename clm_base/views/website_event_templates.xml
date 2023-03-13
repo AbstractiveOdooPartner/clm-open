@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="event_details" inherit_id="website_event.event_details">
+        <!-- Set background color of event page, so that extra registration CTA below has matching background -->
+        <xpath expr="//div[@name='event']" position="attributes">
+            <attribute name="style">background-color: #E9ECEF !important</attribute>
+        </xpath>
+        <!-- Add extra registration CTA below event details -->
+        <xpath expr="//t[@t-out='0']" position="after">
+            <div class="container" t-if="event.extra_registration_cta_bottom">
+                <t t-call="website_event.registration_template"/>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
