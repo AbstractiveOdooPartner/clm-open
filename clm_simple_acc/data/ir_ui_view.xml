@@ -57,4 +57,9 @@
         </field>
     </record>
 
+    <!-- modified menu sequence -->
+    <record id="account.menu_finance_payables" model="ir.ui.menu">
+        <field name="sequence" eval="1"/>
+    </record>
+
 </odoo>
