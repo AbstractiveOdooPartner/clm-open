@@ -4,9 +4,12 @@
     <!-- Override template to show iframe with contact form instead of default details form -->
     <template id="portal.portal_my_details">
         <t t-call="portal.portal_layout">
+            <div id="wrap" class="oe_structure oe_empty"/>
             <t t-set="additional_title">Contact Details</t>
             <!-- Spinner during loading of the iframe -->
-            <div id="spinner" width="100%" height="800px" class="text-center"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></div>
+            <div id="spinner" width="100%" height="800px" class="text-center">
+                <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+            </div>
             <!-- iframe containing contact form view -->
             <iframe width="100%" height="800px" frameborder="0" t-attf-src="/{{ request.context['lang'] }}/my/info" onload="document.getElementById('spinner').style.display='none';"/>
         </t>
