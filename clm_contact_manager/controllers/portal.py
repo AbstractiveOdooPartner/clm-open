@@ -2,7 +2,7 @@ from odoo import conf, http, _
 from odoo.http import request
 from odoo.addons.portal.controllers.portal import CustomerPortal
 
-from odoo.addons.web.controllers.main import HomeStaticTemplateHelpers
+from odoo.addons.web.controllers.main import HomeStaticTemplateHelpers, Home
 
 
 class ContactCustomerPortal(CustomerPortal):
@@ -50,3 +50,10 @@ class ContactCustomerPortal(CustomerPortal):
         if contact:
             session_info = self._prepare_contact_sharing_session_info(contact)
             return request.render("clm_contact_manager.contact_sharing_embed", {"session_info": session_info})
+
+
+class WebsiteHome(Home):
+    def _login_redirect(self, uid, redirect=None):
+        if not redirect and not request.env['res.users'].sudo().browse(uid).has_group('base.group_user'):
+            redirect = '/my/account'
+        return super()._login_redirect(uid, redirect=redirect)
