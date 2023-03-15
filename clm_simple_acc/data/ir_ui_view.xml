@@ -29,11 +29,8 @@
             <xpath expr="//field[@name='invoice_line_ids']//tree//field[@name='tax_ids']" position="attributes">
                 <attribute name="groups">account.group_account_readonly,account.group_account_user,account.group_account_manager</attribute>
             </xpath>
-            <xpath expr="//field[@name='invoice_line_ids']//tree//field[@name='analytic_account_id']" position="attributes">
-                <attribute name="groups">account.group_account_readonly,account.group_account_user,account.group_account_manager</attribute>
-            </xpath>
-            <xpath expr="//field[@name='invoice_line_ids']//tree//field[@name='analytic_tag_ids']" position="attributes">
-                <attribute name="groups">account.group_account_readonly,account.group_account_user,account.group_account_manager</attribute>
+            <xpath expr="//field[@name='invoice_line_ids']//tree//field[@name='quantity']" position="attributes">
+                <attribute name="string">Aantal</attribute>
             </xpath>
             <xpath expr="//page[@id='other_tab']" position="attributes">
                 <attribute name="groups">account.group_account_readonly,account.group_account_user,account.group_account_manager</attribute>
