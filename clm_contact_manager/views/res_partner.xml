@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- Barebones res.partner view, showing only a form view with the contact name in it -->
+    <!-- res.partner form view -->
+    <record id="res_partner_sharing_view_form" model="ir.ui.view">
+        <field name="name">res.partner.portal.form</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <form create="false" delete="false">
+                <!-- Don't include the sheet to keep the view cleaner -->
+                <group>
+                    <field name="name" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+</odoo>

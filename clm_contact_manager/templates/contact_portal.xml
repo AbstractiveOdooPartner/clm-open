@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
     <!-- Override template to show iframe with contact form instead of default details form -->
@@ -20,13 +20,11 @@
         <t t-call="web.layout">
             <t t-set="head_contact_sharing">
                 <script type="text/javascript">
-                        odoo.__session_info__ =
-                    <t t-out="json.dumps(session_info)" />
-                        ;
-                        // Prevent the menu_service to load anything. In an ideal world, contact Sharing assets would only contain
-                        // what is genuinely necessary, and not the whole backend.
-                        odoo.loadMenusPromise = Promise.resolve();
-                        odoo.loadTemplatesPromise = fetch(`/web/webclient/qweb/${odoo.__session_info__.cache_hashes.qweb}?bundle=clm_contact_manager.assets_qweb`).then(doc => doc.text());
+                    odoo.__session_info__ = <t t-out="json.dumps(session_info)" />;
+                    // Prevent the menu_service to load anything. In an ideal world, contact Sharing assets would only contain
+                    // what is genuinely necessary, and not the whole backend.
+                    odoo.loadMenusPromise = Promise.resolve();
+                    odoo.loadTemplatesPromise = fetch(`/web/webclient/qweb/${odoo.__session_info__.cache_hashes.qweb}?bundle=clm_contact_manager.assets_qweb`).then(doc => doc.text());
                 </script>
                 <base target="_parent" />
                 <t t-call-assets="web.assets_common" t-js="false" />
@@ -39,20 +37,5 @@
             <t t-set="body_classname" t-value="''" />
         </t>
     </template>
-
-    <!-- Barebones res.partner action, showing only a form view with the contact name in it -->
-    <!-- res.partner form view -->
-    <record id="res_partner_sharing_view_form" model="ir.ui.view">
-        <field name="name">res.partner.portal.form</field>
-        <field name="model">res.partner</field>
-        <field name="arch" type="xml">
-            <form create="false" delete="false">
-                <!-- Don't include the sheet to keep the view cleaner -->
-                <group>
-                    <field name="name" />
-                </group>
-            </form>
-        </field>
-    </record>
 
 </odoo>

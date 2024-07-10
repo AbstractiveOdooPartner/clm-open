@@ -12,7 +12,8 @@
     # always loaded
     "data": [
         "security/ir.model.access.csv",
-        "views/contact_portal.xml",
+        "views/res_partner.xml",
+        "templates/contact_portal.xml",
     ],
     "assets": {
         "web.assets_backend_legacy_lazy": [
