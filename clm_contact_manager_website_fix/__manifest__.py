@@ -4,7 +4,7 @@
     "summary": "Fixes CLM Contact Manager error when Website is installed",
     "author": "Abstractive BV",
     "maintainer": "Abstractive BV",
-    "website": "http://abstractive.be",
+    "website": "https://abstractive.be",
     "contributors": [
         "Sibert Aerts",
     ],

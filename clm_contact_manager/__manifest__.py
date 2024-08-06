@@ -4,7 +4,7 @@
     "summary": "Replaces /my/account with an embedded back-end res.partner form view",
     "author": "Abstractive BV",
     "maintainer": "Abstractive BV",
-    "website": "http://abstractive.be",
+    "website": "https://abstractive.be",
     "contributors": [
         "Odoo SA",
         "Vincent Baggerman",
