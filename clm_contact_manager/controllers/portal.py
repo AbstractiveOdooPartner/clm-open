@@ -1,8 +1,10 @@
-from odoo import conf, http, _
-from odoo.http import request
+from odoo import conf, http
+from odoo.http import request, Request
 from odoo.addons.portal.controllers.portal import CustomerPortal
 
 from odoo.addons.web.controllers.home import Home
+
+request: Request
 
 
 class ContactCustomerPortal(CustomerPortal):
@@ -22,7 +24,7 @@ class ContactCustomerPortal(CustomerPortal):
             "translations": translation_hash,
         }
 
-        contact_company = contact.company_id
+        company = contact.company_id or request.env.company
 
         session_info.update(
             cache_hashes=cache_hashes,
@@ -30,11 +32,11 @@ class ContactCustomerPortal(CustomerPortal):
             contact_id=contact.id,
             view_id=request.env.ref("clm_contact_manager.res_partner_sharing_view_form").id,
             user_companies={
-                "current_company": contact_company.id,
+                "current_company": company.id,
                 "allowed_companies": {
-                    contact_company.id: {
-                        "id": contact_company.id,
-                        "name": contact_company.name,
+                    company.id: {
+                        "id": company.id,
+                        "name": company.name,
                     },
                 },
             },
