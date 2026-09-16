@@ -1,0 +1,12 @@
+.o_form_status_indicator {
+    .o_clm_save_button,
+    .o_clm_discard_button {
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        line-height: 1.2;
+    }
+
+    .o_clm_discard_button {
+        margin-left: .5rem;
+    }
+}

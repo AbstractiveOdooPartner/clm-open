@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <!-- Portal users do not recognise the cloud icon as a save button. Same button, same
+         save, but sized and labelled so it reads as one. -->
+    <t t-name="clm_contact_manager.FormStatusIndicator" t-inherit="web.FormStatusIndicator" t-inherit-mode="extension">
+        <xpath expr="//button[hasclass('o_form_button_save')]" position="attributes">
+            <attribute name="class">o_form_button_save o_clm_save_button btn btn-primary</attribute>
+        </xpath>
+        <xpath expr="//button[hasclass('o_form_button_save')]" position="inside">
+            <span class="ms-2">Save changes</span>
+        </xpath>
+        <xpath expr="//button[hasclass('o_form_button_cancel')]" position="attributes">
+            <attribute name="class">o_form_button_cancel o_clm_discard_button btn btn-light</attribute>
+        </xpath>
+    </t>
+
+</templates>
