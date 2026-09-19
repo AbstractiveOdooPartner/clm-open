@@ -1,6 +1,6 @@
 {
     "name": "CLM Contact Manager",
-    "version": "17.0.0.0.0",
+    "version": "17.0.0.1.0",
     "summary": "Replaces /my/account with an embedded back-end res.partner form view",
     "author": "Abstractive BV",
     "maintainer": "Abstractive BV",
@@ -14,6 +14,7 @@
     "license": "Other proprietary",
     "category": "Uncategorized",
     "depends": [
+        "auth_signup",
         "base_setup",
         "contacts",
         "portal",
@@ -23,6 +24,7 @@
         "security/ir.model.access.csv",
         "views/res_partner.xml",
         "templates/contact_portal.xml",
+        "templates/auth_signup_templates.xml",
         "security/portal_form_access.xml",
     ],
     "assets": {

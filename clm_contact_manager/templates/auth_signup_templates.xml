@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- The control question of controllers/auth_signup.py, on the signup form only -->
+    <template id="fields" inherit_id="auth_signup.fields" name="Auth Signup/ResetPassword form fields.inherit.control_question">
+        <xpath expr="//div[hasclass('field-confirm_password')]" position="after">
+            <div t-if="clm_signup_question and not only_passwords" class="mb-3 field-clm_signup_answer">
+                <label for="clm_signup_answer" t-out="clm_signup_question"/>
+                <input type="text" name="clm_signup_answer" id="clm_signup_answer" class="form-control form-control-sm"
+                       inputmode="numeric" autocomplete="off" maxlength="2" required="required"/>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
