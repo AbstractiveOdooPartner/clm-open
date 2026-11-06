@@ -33,9 +33,10 @@ Technical
   `res_partner_sharing_view_form` on the partner of the user. The bundle and the JS are a copy of
   project sharing (`project.webclient`, `project_sharing.js`) of 17.0. The base view shows only the
   name: the customer adds fields with Studio, in the database.
-  - `security/ir.model.access.csv` rewrites the core row `base.access_res_partner_portal` to read
-    + write, so that the form can save. `security/ir_rule.xml` limits that write to the own
-    commercial partner and its contacts: the standard portal rule limits read only.
+  - `security/ir.model.access.csv` gives `base.group_portal` write on `res.partner` (an own row
+    next to the read row of `base`), so that the form can save. `security/ir_rule.xml` limits that
+    write to the own commercial partner and its contacts: the standard portal rule limits read
+    only.
 - PEP-LOGIN-ACCOUNT: `WebsiteHome._login_redirect` sends a non-internal user without an explicit
   redirect to `/my/account`. It replaces the `/my` of `portal`, so the core test
   `portal.TestWebLoginPortal.test_web_login_external` fails with this module installed.
