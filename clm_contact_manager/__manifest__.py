@@ -21,12 +21,11 @@
         "mail",
     ],
     "data": [
-        "security/ir.model.access.csv",
-        "security/ir_rule.xml",
         "views/res_partner.xml",
         "templates/contact_portal.xml",
         "templates/auth_signup_templates.xml",
         "security/portal_form_access.xml",
+        'security/ir.access.csv',
     ],
     "assets": {
         # [PEP-MIJN-ACCOUNT]

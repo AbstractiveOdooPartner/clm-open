@@ -2,19 +2,21 @@
 // [PEP-MIJN-ACCOUNT]. NOTE: This entire file is a modified version of project/static/src/project_sharing/project_sharing.js
 
 import { useBus, useService } from '@web/core/utils/hooks';
+import { useExternalListener, useLayoutEffect } from "@web/owl2/utils";
 import { ActionContainer } from '@web/webclient/actions/action_container';
 import { MainComponentsContainer } from "@web/core/main_components_container";
 import { useOwnDebugContext } from "@web/core/debug/debug_context";
 import { session } from '@web/session';
-import { Component, useEffect, useExternalListener, useState } from "@odoo/owl";
+import { Component, proxy, usePlugin } from "@odoo/owl";
+import { ActionManagerPlugin } from "@web/webclient/actions/action_plugin";
 
 export class ContactSharingWebClient extends Component {
     setup() {
         window.parent.document.body.style.margin = "0"; // remove the margin in the parent body
-        this.actionService = useService('action');
+        this.actionService = usePlugin(ActionManagerPlugin);
         this.user = useService("user");
         useOwnDebugContext({ categories: ["default"] });
-        this.state = useState({
+        this.state = proxy({
             fullscreen: false,
         });
         useBus(this.env.bus, "ACTION_MANAGER:UI-UPDATED", (mode) => {
@@ -22,7 +24,7 @@ export class ContactSharingWebClient extends Component {
                 this.state.fullscreen = mode === "fullscreen";
             }
         });
-        useEffect(
+        useLayoutEffect(
             () => {
                 this._showView();
             },

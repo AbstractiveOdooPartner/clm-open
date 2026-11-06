@@ -1,0 +1,2 @@
+id,name,model_id,group_id/id,operation,domain
+res_partner_portal_write_rule,res_partner: portal: write access on my commercial partner,res.partner,base.group_portal,u,"[('id', 'child_of', user.commercial_partner_id.id)]"
