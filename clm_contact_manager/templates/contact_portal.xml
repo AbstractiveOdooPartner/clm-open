@@ -2,6 +2,7 @@
 <odoo>
 
     <!-- [PEP-MIJN-ACCOUNT]: override template to show iframe with contact form instead of default details form -->
+    <!-- UPGRADE TODO: this replaces the whole core template (now in portal/views/address_templates.xml:480); compare it with 20.0, and check the t-call that 19.1-00-t-call rewrote below (head_contact_sharing passed as a string). -->
     <template id="portal.portal_my_details">
         <t t-call="portal.portal_layout" additional_title.translate="Contact Details">
             <div id="wrap" class="oe_structure oe_empty"/>

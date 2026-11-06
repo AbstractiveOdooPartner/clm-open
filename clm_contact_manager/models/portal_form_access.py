@@ -69,6 +69,7 @@ class PortalFormAccess(models.AbstractModel):
         portal = self.env.ref("base.group_portal", raise_if_not_found=False)
         if not portal:
             return
+        # UPGRADE TODO: ir.model.access does not exist on 20.0; create an ir.access row (operation 'r', group base.group_portal) per Studio model instead.
         access = self.env["ir.model.access"].sudo()
         for model_name in self._portal_form_relations():
             model = (

@@ -3,6 +3,7 @@
 
     <!-- [PEP-OPSLAAN]: portal users do not recognise the cloud icon as a save button. Same button, same
          save, but sized and labelled so it reads as one. -->
+    <!-- UPGRADE TODO: the buttons of web.FormStatusIndicator on 20.0 carry 'btn btn-light p-1' and an oi icon; check that the class override still gives a readable button. -->
     <t t-name="clm_contact_manager.FormStatusIndicator" t-inherit="web.FormStatusIndicator" t-inherit-mode="extension">
         <xpath expr="//button[hasclass('o_form_button_save')]" position="attributes">
             <attribute name="class">o_form_button_save o_clm_save_button btn btn-primary</attribute>

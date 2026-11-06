@@ -12,6 +12,7 @@ class ContactCustomerPortal(CustomerPortal):
     def _prepare_contact_sharing_session_info(self, contact):
         session_info = request.env["ir.http"].session_info()
         user_context = dict(request.env.context) if request.session.uid else {}
+        # UPGRADE TODO: odoo.conf and ir.http.get_web_translations_hash are gone on 20.0; follow _prepare_project_sharing_session_info of 20.0 (project/controllers/portal.py:136), which sends no cache hashes and uses res.currency.get_all_currencies.
         mods = conf.server_wide_modules or []
         if request.env.lang:
             lang = request.env.lang
@@ -56,6 +57,7 @@ class ContactCustomerPortal(CustomerPortal):
 
 class WebsiteHome(Home):
     # [PEP-LOGIN-ACCOUNT]
+    # UPGRADE TODO: the core test portal.TestWebLoginPortal.test_web_login_external expects /my; decision of HUMAN-TODO.md (login redirect) before the gate of phase 4.
     def _login_redirect(self, uid, redirect=None):
         if not redirect and not request.env["res.users"].sudo().browse(uid).has_group("base.group_user"):
             redirect = "/my/account"

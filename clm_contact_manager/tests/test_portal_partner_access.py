@@ -12,6 +12,7 @@ class TestPortalPartnerAccess(TransactionCase):
             {
                 "name": "Portal Member",
                 "login": "portal.member@example.com",
+                # UPGRADE TODO: res.users.groups_id is group_ids on 20.0.
                 "groups_id": [(6, 0, [cls.env.ref("base.group_portal").id])],
             }
         )

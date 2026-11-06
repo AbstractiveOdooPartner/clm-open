@@ -14,6 +14,7 @@ export class ContactSharingWebClient extends Component {
     setup() {
         window.parent.document.body.style.margin = "0"; // remove the margin in the parent body
         this.actionService = usePlugin(ActionManagerPlugin);
+        // UPGRADE TODO: there is no "user" service on 20.0 (@web/core/user is a module) and this.user is unused: drop it. owl3-migration put the component on the Owl 2 compatibility layer (@web/owl2/utils): compare with project_sharing.js of 20.0.
         this.user = useService("user");
         useOwnDebugContext({ categories: ["default"] });
         this.state = proxy({

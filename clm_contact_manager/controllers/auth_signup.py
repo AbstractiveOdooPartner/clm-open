@@ -53,6 +53,7 @@ class ClmAuthSignupHome(AuthSignupHome):
             qcontext["clm_signup_question"] = self._clm_signup_question_text(numbers)
         return qcontext
 
+    # UPGRADE TODO: the signature is _prepare_signup_values(self, qcontext, *, validate_email=False) on 20.0 (auth_signup/controllers/main.py:161); pass the keyword on.
     def _prepare_signup_values(self, qcontext):
         if self._clm_signup_question_enabled(qcontext):
             # 1 answer for each question: a wrong answer gets a new question.

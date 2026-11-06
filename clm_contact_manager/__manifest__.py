@@ -31,6 +31,7 @@
     "assets": {
         # [PEP-MIJN-ACCOUNT]
         # NOTE: This entire block is copied and adjusted from "project.webclient"
+        # UPGRADE TODO: rebuild this bundle from project.webclient of 20.0 (project/__manifest__.py:113): 23 of its 87 paths do not exist on 20.0 (web_editor, jquery, select2, legacy scss, font-awesome.css).
         "clm_contact_manager.webclient": [
             ("include", "web._assets_helpers"),
             ("include", "web._assets_backend_helpers"),
