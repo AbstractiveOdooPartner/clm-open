@@ -16,7 +16,7 @@
     ],
     "auto_install": True,
     "assets": {
-        # NOTE: This asset inclusion is copied from website_form_project that suffers the exact same issue.
+        # [PEP-MIJN-ACCOUNT-WEBSITE]. NOTE: This asset inclusion is copied from website_form_project that suffers the exact same issue.
         "clm_contact_manager.webclient": [
             # In website, there is a patch of the LinkDialog (see
             # website/static/src/js/editor/editor.js) that require the utils.js.
