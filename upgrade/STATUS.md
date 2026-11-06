@@ -50,8 +50,9 @@ and writes only files inside the repo. `owl3-migration` (no version prefix) ran 
 
 ## What needs a person
 
-`HUMAN-TODO.md`: 6 items. Blocking phase 4: the production database (item 3) for the seed and the
-installed module list, and the login redirect (item 4) for the gate "all tests green".
+`HUMAN-TODO.md`: 7 items. Blocking phase 4: the production database (item 3) for the seed and the
+installed module list, the login redirect (item 4) for the gate "all tests green", and a 20.0
+runtime (item 7: `repro_create mode=upgrade` refuses to build without a platform dump).
 
 ## Open points of the port (the markers)
 
