@@ -8,7 +8,7 @@ request: Request
 
 
 class ContactCustomerPortal(CustomerPortal):
-    # NOTE: This is based on _prepare_project_sharing_session_info
+    # [PEP-MIJN-ACCOUNT]. NOTE: This is based on _prepare_project_sharing_session_info
     def _prepare_contact_sharing_session_info(self, contact):
         session_info = request.env["ir.http"].session_info()
         user_context = dict(request.env.context) if request.session.uid else {}
@@ -45,6 +45,7 @@ class ContactCustomerPortal(CustomerPortal):
         )
         return session_info
 
+    # [PEP-MIJN-ACCOUNT]
     @http.route(["/my/info/"], type="http", auth="public", website=True)
     def contact_sharing(self, **kwargs):
         contact = request.env.user.partner_id
@@ -54,6 +55,7 @@ class ContactCustomerPortal(CustomerPortal):
 
 
 class WebsiteHome(Home):
+    # [PEP-LOGIN-ACCOUNT]
     def _login_redirect(self, uid, redirect=None):
         if not redirect and not request.env["res.users"].sudo().browse(uid).has_group("base.group_user"):
             redirect = "/my/account"

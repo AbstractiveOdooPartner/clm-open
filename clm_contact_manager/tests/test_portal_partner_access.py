@@ -2,6 +2,7 @@ from odoo.exceptions import AccessError
 from odoo.tests import TransactionCase, tagged
 
 
+# [PEP-MIJN-ACCOUNT]
 @tagged("post_install", "-at_install")
 class TestPortalPartnerAccess(TransactionCase):
     @classmethod

@@ -15,6 +15,7 @@ NUMBER_WORDS = {
 }
 
 
+# [PEP-CONTROLEVRAAG]
 class ClmAuthSignupHome(AuthSignupHome):
     """A control question on /web/signup: a sum in words, which a robot does not read.
 

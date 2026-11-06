@@ -13,6 +13,7 @@ VALUES = {
 }
 
 
+# [PEP-CONTROLEVRAAG]
 @tagged("post_install", "-at_install")
 class TestSignupQuestion(HttpCase):
     @classmethod

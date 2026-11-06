@@ -29,6 +29,7 @@
         "security/portal_form_access.xml",
     ],
     "assets": {
+        # [PEP-MIJN-ACCOUNT]
         # NOTE: This entire block is copied and adjusted from "project.webclient"
         "clm_contact_manager.webclient": [
             ("include", "web._assets_helpers"),

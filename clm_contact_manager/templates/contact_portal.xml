@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- Override template to show iframe with contact form instead of default details form -->
+    <!-- [PEP-MIJN-ACCOUNT]: override template to show iframe with contact form instead of default details form -->
     <template id="portal.portal_my_details">
         <t t-call="portal.portal_layout">
             <div id="wrap" class="oe_structure oe_empty"/>
@@ -15,7 +15,7 @@
         </t>
     </template>
 
-    <!-- Template used by controller -->
+    <!-- [PEP-MIJN-ACCOUNT]: template used by controller -->
     <template id="contact_sharing_embed" name="Contact Sharing View Embed">
         <t t-call="web.layout">
             <t t-set="head_contact_sharing">

@@ -1,5 +1,5 @@
 /** @odoo-module **/
-// NOTE: This entire file is a modified version of project/static/src/project_sharing/project_sharing.js
+// [PEP-MIJN-ACCOUNT]. NOTE: This entire file is a modified version of project/static/src/project_sharing/project_sharing.js
 
 import { useBus, useService } from '@web/core/utils/hooks';
 import { ActionContainer } from '@web/webclient/actions/action_container';

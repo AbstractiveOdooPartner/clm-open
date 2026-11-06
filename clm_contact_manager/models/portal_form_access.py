@@ -9,6 +9,7 @@ _logger = logging.getLogger(__name__)
 PORTAL_FORM = "clm_contact_manager.res_partner_sharing_view_form"
 
 
+# [PEP-PORTAAL-VELDEN]
 class PortalFormAccess(models.AbstractModel):
     """Read access on the Studio models that /my/account shows.
 
