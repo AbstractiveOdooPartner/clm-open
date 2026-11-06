@@ -1,6 +1,7 @@
 {
     "name": "CLM Contact Manager Website Fix",
-    "version": "17.0.0.0.0",
+    # UPGRADE TODO: Module unupgraded
+    "version": "20.0.0.0.0",
     "summary": "Fixes CLM Contact Manager error when Website is installed",
     "author": "Abstractive BV",
     "maintainer": "Abstractive BV",

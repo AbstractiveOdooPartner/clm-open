@@ -1,6 +1,7 @@
 {
     "name": "CLM Contact Manager",
-    "version": "17.0.0.1.0",
+    # UPGRADE TODO: Module unupgraded
+    "version": "20.0.0.1.0",
     "summary": "Replaces /my/account with an embedded back-end res.partner form view",
     "author": "Abstractive BV",
     "maintainer": "Abstractive BV",
