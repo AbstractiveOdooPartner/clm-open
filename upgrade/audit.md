@@ -87,12 +87,12 @@ A module installed in production that no repository holds is first a question ab
 | Run | Database | Result |
 | --- | --- | --- |
 | `-i clm_contact_manager,website --test-enable`, branch `17.0` as is | `src_gate` | 5 failed of 1809: the 4 tests of `TestSignupQuestion` (404 on `/web/signup`) and `portal.TestWebLoginPortal.test_web_login_external` |
-| same, with fix `b9ec813` | `src_gate2` | 1 failed of 1809: `portal.TestWebLoginPortal.test_web_login_external` |
-| `--test-tags /clm_contact_manager,/clm_contact_manager_website_fix`, with `b9ec813` and `dc3427e` | `src_gate6` | 0 failed of 6, 0 ERROR, 0 WARNING, exit 0 |
+| same, with fix `d7a7ced` | `src_gate2` | 1 failed of 1809: `portal.TestWebLoginPortal.test_web_login_external` |
+| `--test-tags /clm_contact_manager,/clm_contact_manager_website_fix`, with `d7a7ced` and `82484a8` | `src_gate6` | 0 failed of 6, 0 ERROR, 0 WARNING, exit 0 |
 
 - **404 on `/web/signup`**: with `website` installed, `website/models/res_users.py:67` takes the
   signup scope from the website (`auth_signup_uninvited`, default `b2b`), not from the system
-  parameter that the test set. The test now opens signup on each website too. Fix `b9ec813`.
+  parameter that the test set. The test now opens signup on each website too. Fix `d7a7ced`.
 - **`portal.test_web_login_external`** asserts that a portal user lands on `/my` after login.
   `WebsiteHome._login_redirect` (`controllers/portal.py:56`) sends them to `/my/account` on
   purpose (`d99557c [IMP] redirect on login to /my/account`, 2023). Both cannot hold. This is a
@@ -107,7 +107,7 @@ a portal user cannot read another contact (AccessError), and **can write to it**
 changed). Any member with a portal login could change any contact of the company over
 JSON-RPC.
 
-Fix `dc3427e`: rule `clm_contact_manager.res_partner_portal_write_rule`, write only, domain
+Fix `82484a8`: rule `clm_contact_manager.res_partner_portal_write_rule`, write only, domain
 `[('id', 'child_of', user.commercial_partner_id.id)]` (the scope of the read rule), with
 `tests/test_portal_partner_access.py` (2 tests, green on 17.0). This fix belongs on production
 now, on 17.0: `HUMAN-TODO.md`, item 2.

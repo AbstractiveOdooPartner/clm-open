@@ -38,16 +38,20 @@
 <h1>PEP VZW: Odoo 17.0 to 20.0</h1>
 <p class="sub">Upgrade log, written by the agents that did the work. Generated 2026-11-06 from
 <code>upgrade/log.jsonl</code>. The long reports are linked per line.</p>
-<p class="counts">2 proven &middot; 1 needs a decision</p>
+<p class="counts">3 proven &middot; 2 needs a decision</p>
 <table>
 <caption>What happened, newest first</caption>
 <thead><tr><th>When</th><th>Phase</th><th>What</th><th>Result</th><th>Numbers</th><th>Report</th></tr></thead>
 <tbody>
-<tr><td class="when">2026-11-06</td><td class="phase">1</td><td><strong>Source baseline on 17.0: 2 fixes, security hole closed</strong><div class="detail">Portal users could write any contact (proven on 17.0). Fix dc3427e with 2 tests; production deploy: HUMAN-TODO item 2. Login redirect vs portal test: item 4.</div></td><td><span class="tag" style="color:#137333;background:#e6f4ea">proven</span></td><td class="numbers">before: 5 failed of 1809; after b9ec813 + dc3427e: 0 failed of 6 module tests, 0 ERROR; 1 core test conflicts with the login redirect</td><td><a href="upgrade/audit.md">audit.md</a></td></tr>
+<tr><td class="when">2026-11-06</td><td class="phase">2</td><td><strong>No platform request: Odoo has no upgrade scripts for 20.0</strong><div class="detail">brief.md: no scripts for 20.0 yet. The request also needs the database (no dump access).</div></td><td><span class="tag" style="color:#8a5300;background:#fef7e0">needs a decision</span></td><td class="numbers">0 requests sent</td><td><a href="upgrade/HUMAN-TODO.md">HUMAN-TODO.md</a></td></tr>
+<tr><td class="when">2026-11-06</td><td class="phase">2</td><td><strong>READMEs and feature tags on the source</strong><div class="detail">Production data per feature not checked: no database access (HUMAN-TODO item 3).</div></td><td><span class="tag" style="color:#137333;background:#e6f4ea">proven</span></td><td class="numbers">2 READMEs; 6 feature tags, 18 tagged places; lint 0 problems; source tests 0 failed of 6, 0 ERROR, 0 WARNING after tagging</td><td><a href="upgrade/FEATURES.md">FEATURES.md</a></td></tr>
+<tr><td class="when">2026-11-06</td><td class="phase">1</td><td><strong>Source baseline on 17.0: 2 fixes, security hole closed</strong><div class="detail">Portal users could write any contact (proven on 17.0). Fix 82484a8 with 2 tests; production deploy: HUMAN-TODO item 2. Login redirect vs portal test: item 4.</div></td><td><span class="tag" style="color:#137333;background:#e6f4ea">proven</span></td><td class="numbers">before: 5 failed of 1809; after d7a7ced + 82484a8: 0 failed of 6 module tests, 0 ERROR; 1 core test conflicts with the login redirect</td><td><a href="upgrade/audit.md">audit.md</a></td></tr>
 <tr><td class="when">2026-11-06</td><td class="phase">1</td><td><strong>Audit of the code; production database not reachable</strong><div class="detail">Environment 502 has no dump, SQL, RPC or shell access. Choice per module and access: HUMAN-TODO items 3, 5, 6.</div></td><td><span class="tag" style="color:#8a5300;background:#fef7e0">needs a decision</span></td><td class="numbers">2 modules on 17.0, 407 Python lines; 9 modules of the brief not on 17.0; installed in production: unknown; before.json: not made</td><td><a href="upgrade/audit.md">audit.md</a></td></tr>
 <tr><td class="when">2026-11-06</td><td class="phase">0</td><td><strong>Remote and production branch checked</strong><div class="detail">Upgrade branch starts from origin/17.0 (481be07), not enterprise. The checkout on the server is not read yet (HUMAN-TODO item 1).</div></td><td><span class="tag" style="color:#137333;background:#e6f4ea">proven</span></td><td class="numbers">isFork false; enterprise: 2 commits (2022), 15.0 manifests, registry fails on 17.0; 17.0: 21 commits, last 2026-09-19, installs on 17.0</td><td><a href="upgrade/audit.md">audit.md</a></td></tr>
 </tbody>
 </table>
-<table><caption>The reports</caption><thead><tr><th>File</th><th>What it holds</th></tr></thead><tbody><tr><td><a href="upgrade/audit.md"><code>upgrade/audit.md</code></a></td><td>Audit of clm-open for PEP VZW, Odoo 17.0 → 20.0</td></tr></tbody></table>
+<table><caption>The reports</caption><thead><tr><th>File</th><th>What it holds</th></tr></thead><tbody><tr><td><a href="upgrade/audit.md"><code>upgrade/audit.md</code></a></td><td>Audit of clm-open for PEP VZW, Odoo 17.0 → 20.0</td></tr>
+<tr><td><a href="upgrade/FEATURES.md"><code>upgrade/FEATURES.md</code></a></td><td>Feature list of PEP VZW, the UAT script of phase 9</td></tr>
+<tr><td><a href="upgrade/HUMAN-TODO.md"><code>upgrade/HUMAN-TODO.md</code></a></td><td>Open beslissingen: upgrade PEP VZW 17.0 → 20.0</td></tr></tbody></table>
 </body>
 </html>
