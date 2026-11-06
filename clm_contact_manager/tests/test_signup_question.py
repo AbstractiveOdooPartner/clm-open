@@ -21,6 +21,9 @@ class TestSignupQuestion(HttpCase):
         get_param = cls.env["ir.config_parameter"].sudo()
         get_param.set_param("auth_signup.invitation_scope", "b2c")
         get_param.set_param("clm_contact_manager.signup_question", "True")
+        # With website installed, each website overrides the scope (default b2b).
+        if "website" in cls.env:
+            cls.env["website"].search([]).auth_signup_uninvited = "b2c"
 
     def _signup_page(self):
         page = self.url_open("/web/signup")
