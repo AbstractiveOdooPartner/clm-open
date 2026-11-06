@@ -1,0 +1,141 @@
+{
+  "from_version": "17.0",
+  "to_version": "20.0",
+  "addons_paths": [
+    "."
+  ],
+  "applicable_upgrade_code_scripts": [
+    {
+      "file": "17.5-01-tree-to-list.py",
+      "version": 17.5,
+      "description": "<tree> \u2192 <list>, tree_view_ref \u2192 list_view_ref, mode/view_mode refs"
+    },
+    {
+      "file": "18.1-00-sql-constraint.py",
+      "version": 18.1,
+      "description": "_sql_constraints = [(...)] \u2192 _name = models.Constraint(...)"
+    },
+    {
+      "file": "18.1-02-route-jsonrpc.py",
+      "version": 18.1,
+      "description": "type='json' \u2192 type='jsonrpc' in controllers"
+    },
+    {
+      "file": "18.2-00-l10n-translate.py",
+      "version": 18.2,
+      "description": "l10n translation changes"
+    },
+    {
+      "file": "18.3-00-l10n-fiscal-position-taxes.py",
+      "version": 18.3,
+      "description": "Fiscal position tax changes"
+    },
+    {
+      "file": "18.5-00-deprecated-properties.py",
+      "version": 18.5,
+      "description": "self._cr \u2192 self.env.cr, self._uid \u2192 self.env.uid, self._context \u2192 self.env.context"
+    },
+    {
+      "file": "18.5-00-domain-dynamic-dates.py",
+      "version": 18.5,
+      "description": "Domain dynamic date changes"
+    },
+    {
+      "file": "18.5-00-no-tax-tag-invert.py",
+      "version": 18.5,
+      "description": "Tax tag invert changes"
+    }
+  ],
+  "xml_parser": "lxml",
+  "scope": {
+    "modules_requested": null,
+    "include_uninstallable": false
+  },
+  "warnings": [],
+  "module_count": 2,
+  "summary": {
+    "custom": 2,
+    "oca": 0,
+    "commercial": 0,
+    "total_python_loc": 407,
+    "total_js_files": 2,
+    "total_scss_files": 1,
+    "risk_high": 0,
+    "risk_medium": 1,
+    "risk_low": 1,
+    "runtime_pattern_hits_total": 1,
+    "runtime_pattern_hits_high": 0,
+    "runtime_pattern_hits_medium": 1,
+    "runtime_pattern_hits_low": 0
+  },
+  "modules": [
+    {
+      "name": "clm_contact_manager",
+      "abs_path": "clm_contact_manager",
+      "display_name": "CLM Contact Manager",
+      "version": "17.0.0.1.0",
+      "author": "Abstractive BV",
+      "license": "Other proprietary",
+      "website": "https://abstractive.be",
+      "depends": [
+        "auth_signup",
+        "base_setup",
+        "contacts",
+        "portal",
+        "mail"
+      ],
+      "installable": true,
+      "category": "custom",
+      "python_loc": 382,
+      "models": [
+        "clm.portal.form.access"
+      ],
+      "views": {
+        "form": 1
+      },
+      "reports": 0,
+      "controllers": 1,
+      "js_files": 2,
+      "scss_files": 1,
+      "xml_files": 6,
+      "runtime_pattern_hits": [
+        {
+          "label": "py.from_odoo_import_underscore",
+          "severity": "MEDIUM",
+          "file": "controllers/auth_signup.py",
+          "line": 3,
+          "snippet": "from odoo import _",
+          "description": "v18+ prefers env._() over module-level _",
+          "fix_hint": "Use self.env._('...') in models, request.env._('...') in controllers",
+          "abs_path": "clm_contact_manager/controllers/auth_signup.py"
+        }
+      ],
+      "risk": "MEDIUM"
+    },
+    {
+      "name": "clm_contact_manager_website_fix",
+      "abs_path": "clm_contact_manager_website_fix",
+      "display_name": "CLM Contact Manager Website Fix",
+      "version": "17.0.0.0.0",
+      "author": "Abstractive BV",
+      "license": "Other proprietary",
+      "website": "https://abstractive.be",
+      "depends": [
+        "website",
+        "clm_contact_manager"
+      ],
+      "installable": true,
+      "category": "custom",
+      "python_loc": 25,
+      "models": [],
+      "views": {},
+      "reports": 0,
+      "controllers": 0,
+      "js_files": 0,
+      "scss_files": 0,
+      "xml_files": 0,
+      "runtime_pattern_hits": [],
+      "risk": "LOW"
+    }
+  ]
+}

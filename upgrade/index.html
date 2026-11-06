@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PEP VZW 17.0 to 20.0</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1f1f1f; --muted: #5f6368; --line: #dadce0; --head: #f1f3f4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1f1f1f; --fg: #e8eaed; --muted: #9aa0a6; --line: #3c4043; --head: #292a2d; }
+  }
+  html { background: var(--bg); }
+  body {
+    background: var(--bg); color: var(--fg); margin: 0 auto; padding: 24px 16px 64px;
+    max-width: 1100px; font: 15px/1.55 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  p.sub { color: var(--muted); margin: 0 0 24px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  caption { text-align: left; font-weight: 600; padding: 20px 0 8px; }
+  th, td { border-bottom: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--head); font-weight: 600; white-space: nowrap; }
+  td.when, td.phase { white-space: nowrap; color: var(--muted); }
+  td.numbers { font-variant-numeric: tabular-nums; }
+  .tag {
+    display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px; font-weight: 600;
+    white-space: nowrap;
+  }
+  .detail { color: var(--muted); font-size: 13px; margin-top: 3px; }
+  a { color: inherit; }
+  code { font-size: 13px; background: var(--head); padding: 1px 4px; border-radius: 3px; }
+  .counts { margin: 0 0 8px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<h1>PEP VZW: Odoo 17.0 to 20.0</h1>
+<p class="sub">Upgrade log, written by the agents that did the work. Generated 2026-11-06 from
+<code>upgrade/log.jsonl</code>. The long reports are linked per line.</p>
+<p class="counts">2 proven &middot; 1 needs a decision</p>
+<table>
+<caption>What happened, newest first</caption>
+<thead><tr><th>When</th><th>Phase</th><th>What</th><th>Result</th><th>Numbers</th><th>Report</th></tr></thead>
+<tbody>
+<tr><td class="when">2026-11-06</td><td class="phase">1</td><td><strong>Source baseline on 17.0: 2 fixes, security hole closed</strong><div class="detail">Portal users could write any contact (proven on 17.0). Fix dc3427e with 2 tests; production deploy: HUMAN-TODO item 2. Login redirect vs portal test: item 4.</div></td><td><span class="tag" style="color:#137333;background:#e6f4ea">proven</span></td><td class="numbers">before: 5 failed of 1809; after b9ec813 + dc3427e: 0 failed of 6 module tests, 0 ERROR; 1 core test conflicts with the login redirect</td><td><a href="upgrade/audit.md">audit.md</a></td></tr>
+<tr><td class="when">2026-11-06</td><td class="phase">1</td><td><strong>Audit of the code; production database not reachable</strong><div class="detail">Environment 502 has no dump, SQL, RPC or shell access. Choice per module and access: HUMAN-TODO items 3, 5, 6.</div></td><td><span class="tag" style="color:#8a5300;background:#fef7e0">needs a decision</span></td><td class="numbers">2 modules on 17.0, 407 Python lines; 9 modules of the brief not on 17.0; installed in production: unknown; before.json: not made</td><td><a href="upgrade/audit.md">audit.md</a></td></tr>
+<tr><td class="when">2026-11-06</td><td class="phase">0</td><td><strong>Remote and production branch checked</strong><div class="detail">Upgrade branch starts from origin/17.0 (481be07), not enterprise. The checkout on the server is not read yet (HUMAN-TODO item 1).</div></td><td><span class="tag" style="color:#137333;background:#e6f4ea">proven</span></td><td class="numbers">isFork false; enterprise: 2 commits (2022), 15.0 manifests, registry fails on 17.0; 17.0: 21 commits, last 2026-09-19, installs on 17.0</td><td><a href="upgrade/audit.md">audit.md</a></td></tr>
+</tbody>
+</table>
+<table><caption>The reports</caption><thead><tr><th>File</th><th>What it holds</th></tr></thead><tbody><tr><td><a href="upgrade/audit.md"><code>upgrade/audit.md</code></a></td><td>Audit of clm-open for PEP VZW, Odoo 17.0 → 20.0</td></tr></tbody></table>
+</body>
+</html>
