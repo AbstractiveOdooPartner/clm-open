@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- security/ir.model.access.csv gives portal users write on res.partner for /my/account.
+         The standard portal rule only limits read, so limit write to the same partners. -->
+    <record id="res_partner_portal_write_rule" model="ir.rule">
+        <field name="name">res_partner: portal: write access on my commercial partner</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="domain_force">[('id', 'child_of', user.commercial_partner_id.id)]</field>
+        <field name="groups" eval="[Command.link(ref('base.group_portal'))]"/>
+        <field name="perm_read" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+        <field name="perm_write" eval="True"/>
+    </record>
+
+</odoo>

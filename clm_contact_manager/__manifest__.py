@@ -22,6 +22,7 @@
     ],
     "data": [
         "security/ir.model.access.csv",
+        "security/ir_rule.xml",
         "views/res_partner.xml",
         "templates/contact_portal.xml",
         "templates/auth_signup_templates.xml",
