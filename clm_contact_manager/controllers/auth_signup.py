@@ -1,6 +1,5 @@
 import random
 
-from odoo import _
 from odoo.exceptions import UserError
 from odoo.http import request
 from odoo.addons.auth_signup.controllers.main import AuthSignupHome
@@ -38,7 +37,7 @@ class ClmAuthSignupHome(AuthSignupHome):
     def _clm_signup_question_text(self, numbers):
         words = NUMBER_WORDS.get((request.env.lang or "en_US")[:2])
         first, second = (words[number - 1] for number in numbers) if words else numbers
-        return _(
+        return request.env._(
             "How much is %(first)s plus %(second)s? Answer with a digit.",
             first=first,
             second=second,
@@ -63,5 +62,5 @@ class ClmAuthSignupHome(AuthSignupHome):
                 qcontext["clm_signup_question"] = self._clm_signup_question_text(
                     self._clm_new_signup_numbers()
                 )
-                raise UserError(_("The answer to the control question is not correct."))
+                raise UserError(request.env._("The answer to the control question is not correct."))
         return super()._prepare_signup_values(qcontext)
